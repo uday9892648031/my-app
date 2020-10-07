@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SukhoThai gift card</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <style>
+        *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        }
+        .therapytab__card{
+        background: #1f1229;
+        padding-bottom: 40px;
+        }
+        .therapytab__md-form label{
+        color: #e3a84e!important;
+        }
+        .therapytab__md-form input[type="text"],.therapytab__md-form input[type="text"]:focus,
+        .therapytab__md-form input[type="number"],.therapytab__md-form input[type="number"]:focus
+        {
+        border-bottom: 1px solid #e3a84e!important;
+        border-left: 1px solid #1f1229!important;
+        border-right: 1px solid #1f1229!important;
+        box-shadow: 0 1px 0 0 #cca84d!important;
+        color: #e3a84e!important;
+        }
+
+        .maindiv__nav-item 
+        {
+        text-align: center;
+        }
+        .maindiv__nav-link--style.active{
+        color: #ee018c;
+        border: 1px solid #ee018c;
+        }
+
+        .containerdiv {
+        position: relative;   
+        }
+        .maindiv__nav-link--style{
+        border-radius: 10em;
+        color: #e3a84e;
+        border: 1px solid #e3a84e;
+        margin: 2px;
+        font-size: 16px;
+        width: 250px;
+        }
+
+        .maindiv__nav-link--style:hover{
+        color:#ee018c;
+        border: 1px solid #ee018c;
+        }
+
+        .containerdiv__topleft {
+        position: absolute;
+        top: 8px;
+        left: 5%;
+        font-size: 18px;
+        color: #fff;
+        }
+
+        .containerdiv__topbottom {
+        position: absolute;
+        bottom:20px;
+        left: 16px;
+        font-size: 18px;
+        }
+
+        .containerdiv__bottomright{
+        position: absolute;
+        bottom:20px;
+        right: 5%;
+        font-size: 18px;
+        color: #fff;
+        }
+
+        #containerdiv__barcode {
+        position:absolute;
+        left:5%;
+        bottom:5%;
+        max-width: 100px;
+        }
+
+        .therapytab__btn--style,.therapytab__btn--style:hover,.therapytab__btn--style:focus {
+        color: #e3a84e !important;
+        background-color: transparent !important;
+        border: 2px solid #e3a84e !important;
+        }
+       
+        .maindiv{
+            margin: 0 auto;
+            padding: 40px 30px;
+            background-color: #311d40;
+            border: 2px solid #e3a84e!important;
+            box-shadow: 5px 5px 10px 2px #888888;
+            margin-top:40px;
+            margin-bottom: 40px;
+        }
+        .therapytab__btn--style:hover,.therapytab__btn--style:not([disabled]):not(.disabled):active,.therapytab__btn--style:focus{
+            color: #e3a84e!important;
+            border-color: #e3a84e!important;
+        }
+        .containerdiv__topleft{        
+            text-shadow: 2px 2px 3px #ee018c;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+        .containerdiv__bottomright{
+            text-shadow: 2px 2px 3px #ee018c;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+        .containerdiv__w100{
+           width: 100%;
+        }
+
+        .maindiv__navscroll{
+            flex-wrap: nowrap;
+             overflow-x: scroll;
+        }
+        .maindiv__mb-20{
+            margin-bottom: 20px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+            background: rgba(90, 90, 90);
+            }
+
+            ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            }
+        
+        @media only screen and (max-width:991px){
+            #containerdiv__barcode{
+                max-width:70px;
+            }
+        }
+        @media only screen and (max-width:767px){
+            .main{
+            width: 100%;
+            }
+            #containerdiv__barcode {
+            position: absolute;
+            left: 5%;
+            bottom: 10%;
+            max-width: 40px;
+            }
+            .containerdiv__topleft{
+            font-size:13px;
+            }
+            .containerdiv__bottomright{
+            font-size: 13px;
+            }
+            .maindiv__nav-link--style{
+            width: 195px;
+            }
+        }
+        @media only screen and (max-width:576px){
+            .main{
+            width: 100%;
+            }
+            .containerdiv__topleft{       
+            font-size: 0.625rem;
+            font-weight: bold;
+            }
+            .containerdiv__bottomright{
+            font-size: 0.625rem;
+            font-weight: bold;
+            }
+            #containerdiv__barcode {
+            position: absolute;
+            left: 5%;
+            bottom: 10%;
+            max-width: 30px;
+            }
+        }
+        @media only screen and (max-width:360px){
+            .containerdiv__topleft,.containerdiv__bottomright{
+            font-size:8px;
+            }  
+            #containerdiv__barcode {
+            position: absolute;
+            left: 5%;
+            bottom: 10%;
+            max-width: 20px;
+            }
+            .maindiv__nav-link--style{
+            width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="maindiv row">
+            <div class="col-12 col-md-12 col-lg-12 maindiv__mb-20">
+                <ul class="nav md-pills nav-justified my-3 maindiv__navscroll">
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__navlink maindiv__nav-link--style active" data-toggle="tab" href="#panel11"
+                            role="tab">Birthday</a>
+                    </li>
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__navlink maindiv__nav-link--style" data-toggle="tab" href="#panel12"
+                            role="tab">Anniversary</a>
+                    </li>
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__navlink maindiv__nav-link--style" data-toggle="tab" href="#panel13"
+                            role="tab">BabyShower</a>
+                    </li>
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__nav-link--style" data-toggle="tab" href="#panel14" role="tab">HouseWarming</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content pt-0">
+                    <!--Panel 1-->
+                    <div class="tab-pane fade in show active" id="panel11" role="tabpanel">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel"
+                            data-interval="false">
+                            <!--Indicators-->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                            </ol>
+                            <!--/.Indicators-->
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                <!--First slide-->
+                                <div class="carousel-item active">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/birthday1.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/First slide-->
+                                <!--Second slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/birthday2.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Second slide-->
+                                <!--Third slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/birthday.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Third slide-->
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                        </div>
+                        <!--/.Carousel Wrapper-->
+
+                    </div>
+                    <!--/.Panel 1-->
+
+                    <!--Panel 2-->
+                    <div class="tab-pane fade" id="panel12" role="tabpanel">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-example-2z" class="carousel slide carousel-fade" data-ride="carousel"
+                            data-interval="false">
+                            <!--Indicators-->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-2z" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-2z" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-2z" data-slide-to="2"></li>
+                            </ol>
+                            <!--/.Indicators-->
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                <!--First slide-->
+                                <div class="carousel-item active">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/anniversary.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/First slide-->
+                                <!--Second slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/anniversary1.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Second slide-->
+                                <!--Third slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/anniversary2.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Third slide-->
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-example-2z" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-example-2z" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                        </div>
+                        <!--/.Carousel Wrapper-->
+
+                    </div>
+                    <!--/.Panel 2-->
+
+                    <!--Panel 3-->
+                    <div class="tab-pane fade" id="panel13" role="tabpanel">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-example-3z" class="carousel slide carousel-fade" data-ride="carousel"
+                            data-interval="false">
+                            <!--Indicators-->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-3z" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-3z" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-3z" data-slide-to="2"></li>
+                            </ol>
+                            <!--/.Indicators-->
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                <!--First slide-->
+                                <div class="carousel-item active">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/baby_shower.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/First slide-->
+                                <!--Second slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/baby_shower1.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Second slide-->
+                                <!--Third slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/baby_shower2.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Third slide-->
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-example-3z" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-example-3z" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <!--/.Panel 3-->
+
+
+
+
+                    <!--Panel 4-->
+                    <div class="tab-pane fade" id="panel14" role="tabpanel">
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-example-4z" class="carousel slide carousel-fade" data-ride="carousel"
+                            data-interval="false">
+                            <!--Indicators-->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-4z" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-4z" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-4z" data-slide-to="2"></li>
+                            </ol>
+                            <!--/.Indicators-->
+                            <!--Slides-->
+                            <div class="carousel-inner" role="listbox">
+                                <!--First slide-->
+                                <div class="carousel-item active">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/house_warming.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/First slide-->
+                                <!--Second slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/house_warming1.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Second slide-->
+                                <!--Third slide-->
+                                <div class="carousel-item">
+                                    <div class="containerdiv">
+                                        <img id="containerdiv__barcode" src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0">
+                                        <img class="containerdiv__w100" src="images/house_warming2.png" alt="First slide">
+                                        <div class="containerdiv__topleft">Dear,<br /> Guest Name</div>
+                                        <div class="containerdiv__topbottom">
+                                        </div>
+                                        <div class="containerdiv__bottomright">Best Wishes from,<br /> Guest Name</div>
+                                    </div>
+                                </div>
+                                <!--/Third slide-->
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-example-4z" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-example-4z" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                        </div>
+                        <!--/.Carousel Wrapper-->
+                    </div>
+                    <!--/.Panel 4-->
+                </div>
+            </div>
+
+
+
+            <div class="col-12 col-md-12 col-lg-12">
+                <ul class="nav md-pills nav-justified mt-3 maindiv__navscroll">
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__nav-link--style active" data-toggle="tab" href="#panel15" role="tab">Therapy1</a>
+                    </li>
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__nav-link--style" data-toggle="tab" href="#panel16" role="tab">Therapy2</a>
+                    </li>
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__nav-link--style" data-toggle="tab" href="#panel17" role="tab">Therapy3</a>
+                    </li>
+                    <li class="maindiv__nav-item">
+                        <a class="nav-link maindiv__nav-link--style" data-toggle="tab" href="#panel18" role="tab">Therapy4</a>
+                    </li>
+                </ul>
+
+                <div class="therapytab tab-content mt-3">
+                    <!--Panel 5-->
+                    <div class="tab-pane fade in show active" id="panel15" role="tabpanel">
+                        <!-- Material form subscription -->
+                        <div class="card therapytab__card">
+                            <!--Card content-->
+                            <div class="card-body px-lg-5">
+                                <!-- Form -->
+                                <form class="text-center" action="#!">
+                                    <!-- Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="cust_name">Guest Name</label>
+                                    </div>
+
+                                    <!-- Therapy-Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="therapy_name">Therapy Name</label>
+                                    </div>
+
+                                    <!-- Amount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="amount">Amount</label>
+                                    </div>
+
+                                    <!-- Discount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="discount">Discount</label>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button class="btn therapytab__btn--style btn-outline-info btn-block waves-effect"
+                                        type="submit">Submit</button>
+
+                                </form>
+                                <!-- Form -->
+                            </div>
+                        </div>
+                        <!-- Material form subscription -->
+                    </div>
+                    <!--/.Panel 5-->
+
+                    <!--Panel 6-->
+                    <div class="tab-pane fade" id="panel16" role="tabpanel">
+                        <!-- Material form subscription -->
+                        <div class="card therapytab__card">
+                            <!--Card content-->
+                            <div class="card-body px-lg-5">
+                                <!-- Form -->
+                                <form class="text-center" action="#!">
+
+                                    <!-- Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="cust_name">Guest Name</label>
+                                    </div>
+
+                                    <!-- Therapy-Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="therapy_name">Therapy Name</label>
+                                    </div>
+
+                                    <!-- Amount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="amount">Amount</label>
+                                    </div>
+
+                                    <!-- Discount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="discount">Discount</label>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button class="btn therapytab__btn--style btn-outline-info btn-block waves-effect"
+                                        type="submit">Submit</button>
+                                </form>
+                                <!-- Form -->
+                            </div>
+
+                        </div>
+                        <!-- Material form subscription -->
+                    </div>
+                    <!--/.Panel 6-->
+
+
+                    <!--Panel 7-->
+                    <div class="tab-pane fade" id="panel17" role="tabpanel">
+                        <!-- Material form subscription -->
+                        <div class="card therapytab__card">
+                            <!--Card content-->
+                            <div class="card-body px-lg-5">
+                                <!-- Form -->
+                                <form class="text-center" action="#!">
+                                    <!-- Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="cust_name">Guest Name</label>
+                                    </div>
+
+                                    <!-- Therapy-Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="therapy_name">Therapy Name</label>
+                                    </div>
+
+                                    <!-- Amount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="amount">Amount</label>
+                                    </div>
+
+                                    <!-- Discount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="discount">Discount</label>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button class="btn therapytab__btn--style btn-outline-info btn-block waves-effect"
+                                        type="submit">Submit</button>
+                                </form>
+                                <!-- Form -->
+                            </div>
+                        </div>
+                        <!-- Material form subscription -->
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel18" role="tabpanel">
+                        <!-- Material form subscription -->
+                        <div class="card therapytab__card">
+                            <!--Card content-->
+                            <div class="card-body px-lg-5">
+
+                                <!-- Form -->
+                                <form class="text-center" action="#!">
+                                    <!-- Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="cust_name">Guest Name</label>
+                                    </div>
+
+                                    <!-- Therapy-Name -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="text" class="form-control">
+                                        <label for="therapy_name">Therapy Name</label>
+                                    </div>
+
+                                    <!-- Amount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="amount">Amount</label>
+                                    </div>
+
+                                    <!-- Discount -->
+                                    <div class="md-form therapytab__md-form">
+                                        <input type="number" class="form-control">
+                                        <label for="discount">Discount</label>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <button class="btn therapytab__btn--style btn-outline-info btn-block waves-effect"
+                                        type="submit">Submit</button>
+                                </form>
+                                <!-- Form -->
+                            </div>
+                        </div>
+                        <!-- Material form subscription -->
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+</body>
+</html>
